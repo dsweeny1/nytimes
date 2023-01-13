@@ -57,6 +57,12 @@ LightHouse was used to measure the accessibility of this app, as well as evaluat
 4. Run `npm run start-dev`
 6. Go to http://localhost:3000/ to view the site.
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_KEY` From  New York Times API Top Stories API 
+
 ## Future Additions and Improvements
 - Sort by date of article
 - Star my favorite articles
