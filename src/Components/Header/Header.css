@@ -1,0 +1,29 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-top: 0.5rem solid #ECECEC;
+    border-bottom: 0.5rem solid #ECECEC;
+    height: 100%;
+    width: 100%;
+}
+.header-title {
+    font-size: 3rem;
+    margin-right: 2%;
+    font-family: 'ChomskyRegular', serif;
+    color: white;
+    font-style: italic;
+    color: white;
+}
+.nyt-logo {
+    height: 6rem;
+    margin: -4%;
+    margin-bottom: -41px;
+    margin-right: 1095px;
+}
+.logo-container {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 100px;
+}
