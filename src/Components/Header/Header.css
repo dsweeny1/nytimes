@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     background-color: black;
     border-top: 0.5rem solid #ECECEC;
     border-bottom: 0.5rem solid #ECECEC;
@@ -19,11 +20,12 @@
 .nyt-logo {
     height: 6rem;
     margin: -4%;
-    margin-bottom: -41px;
-    margin-right: 1095px;
+    margin-bottom: -2.5em;
+    margin-right: 68em;
 }
 .logo-container {
     display: flex;
     align-items: flex-start;
-    margin-left: 100px;
+    margin-left: 5em;
+    flex-direction: column;
 }
