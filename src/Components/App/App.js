@@ -44,6 +44,10 @@ const App = () => {
           path=':id'
           element={!error ? <SingleArticle articles={articles}/> : <Error />}
           />
+          <Route 
+          path='*'
+          element={<Error />}
+          />
         </Routes>
       </Fragment>
       <Footer />

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="name-container">
-        <h4 className="name">Danielle Sweeny</h4>
+        <h4 className="name-tag">Danielle Sweeny</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/danielle-sweeny-75b50b84/">
             <img
