@@ -6,6 +6,7 @@ import SingleArticle from '../SingleArticle/SingleArticle';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 import Error from '../Error/Error'
+import loading from '../../Images/loading.png'
 
 const App = () => {
   const [ articles, setArticles ] = useState([])
@@ -51,6 +52,11 @@ const App = () => {
         </Routes>
       </Fragment>
       <Footer />
+      {!error && !articles.length && (
+        <div>
+          <img src={loading} alt='loading' className='loading-image' />
+        </div>
+      )}
     </div>
   );
 }
