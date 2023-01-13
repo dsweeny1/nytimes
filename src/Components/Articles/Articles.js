@@ -45,7 +45,7 @@ export const Articles = ({ articles }) => {
         <div className='article-container'>
             <div>
                 <form onSubmit={(event) => handleSubmit(event)}>
-                    <button onClick={() => clearInputs()}>Reset</button>
+                    <button className='reset-button' onClick={() => clearInputs()}>Reset</button>
                     <input
                             type='text'
                             name='category'
@@ -53,7 +53,7 @@ export const Articles = ({ articles }) => {
                             value={category}
                             onChange={event => setCategory(event.target.value)}
                         />
-                    <button disabled={!category}>Search</button>
+                    <button className='search-button' disabled={!category}>Search</button>
                 </form>
             </div>
             <div className='articles'>
