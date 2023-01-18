@@ -21,12 +21,22 @@ export const Articles = ({ articles }) => {
     const filteredCards = filtered.map(article => {
         return(
             <ArticleCard 
-            multimedia={!article.multimedia ? nytSymbol : article.multimedia[0].url}
+            multimedia={!article.multimedia === null ? nytSymbol : article.multimedia[0].url}
             title={article.title}
             key={article.title}
             />
         )
     })
+
+    // eredCards = filtered.map(article => {
+    //     return(
+    //         <ArticleCard 
+    //         multimedia={article.multimedia[0]?.url === null ? nytSymbol : article.multimedia[0].url}
+    //         title={article.title}
+    //         key={article.title}
+    //         />
+    //     )
+    // })
 
     const clearInputs = () => {
         setCategory('')

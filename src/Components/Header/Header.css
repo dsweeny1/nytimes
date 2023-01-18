@@ -1,31 +1,37 @@
 .header-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: black;
     border-top: 0.5rem solid #ECECEC;
     border-bottom: 0.5rem solid #ECECEC;
-    height: 100%;
-    width: 100%;
+    height: 15vh;
+    width: 100vw;
+    position: inherit;
 }
 .header-title {
-    font-size: 3rem;
-    margin-right: 2%;
+    margin-left: 72vw;
+    padding: 2rem;
     font-family: 'ChomskyRegular', serif;
     color: white;
     font-style: italic;
-    color: white;
+    font-size: 2.5vw;
+    height: 6.4vh;
+    width: 27vw;
+    position: absolute;
 }
-.nyt-logo {
-    height: 6rem;
-    margin: -4%;
-    margin-bottom: -2.5em;
-    margin-right: 68em;
-}
+
 .logo-container {
-    display: flex;
     align-items: flex-start;
-    margin-left: 5em;
     flex-direction: column;
+    position: absolute;
+}
+
+.nyt-logo {
+    height: 11vh;
+    margin: -2.35%;
+    margin-top: -2.2%;
+    margin-left: 2em;
+    position: inherit;
 }
