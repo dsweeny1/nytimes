@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, useContext } from 'react';
 import './App.css';
 import { Articles } from '../Articles/Articles';
 import { Route, Routes } from 'react-router-dom'
@@ -7,16 +7,20 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
 import Error from '../Error/Error'
 import loading from '../../Images/loading.png'
+import { ThemeContext } from '../../Contexts/ThemeContext';
+import LightSwtich from '../LightSwitch/LightSwitch';
 
 const App = () => {
   const [ articles, setArticles ] = useState([])
   const [ error, setError ] = useState(false)
+  const {darkMode} = useContext(ThemeContext)
 
   const articlesBySection = async () => {
     const url = (`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
 
     try{
       let response = await fetch(url)
+      console.log(response)
       let data = await response.json()
       if(!response.ok) {
         setError(true)
@@ -33,30 +37,33 @@ const App = () => {
   }, [])
   
   return (
-    <div className="App">
-      <Header />
-      <Fragment>
-        <Routes>
-          <Route 
-          path='/'
-          element={!error ? <Articles articles={articles} /> : <Error />}
-          />
-          <Route 
-          path=':id'
-          element={!error ? <SingleArticle articles={articles}/> : <Error />}
-          />
-          <Route 
-          path='*'
-          element={<Error />}
-          />
-        </Routes>
-      </Fragment>
-      <Footer />
-      {!error && !articles.length && (
-        <div>
-          <img src={loading} alt='loading' className='loading-image' />
-        </div>
-      )}
+    <div className={darkMode ? `App App-dark` : `App App-light`}>
+      <div className="App" >
+        <Header />
+        <LightSwtich />
+        <Fragment>
+          <Routes>
+            <Route 
+            path='/'
+            element={!error ? <Articles articles={articles} /> : <Error />}
+            />
+            <Route 
+            path=':id'
+            element={!error ? <SingleArticle articles={articles}/> : <Error />}
+            />
+            <Route 
+            path='*'
+            element={<Error />}
+            />
+          </Routes>
+        </Fragment>
+        <Footer />
+        {!error && !articles.length && (
+          <div>
+            <img src={loading} alt='loading' className='loading-image' />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -4,3 +4,11 @@
   align-items: center;
   overflow: hidden;
 }
+
+.App-dark {
+  background-color: #000;
+}
+
+.App-light {
+  background-color: rgb(216, 216, 216);
+}

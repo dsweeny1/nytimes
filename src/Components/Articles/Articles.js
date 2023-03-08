@@ -28,16 +28,6 @@ export const Articles = ({ articles }) => {
         )
     })
 
-    // eredCards = filtered.map(article => {
-    //     return(
-    //         <ArticleCard 
-    //         multimedia={article.multimedia[0]?.url === null ? nytSymbol : article.multimedia[0].url}
-    //         title={article.title}
-    //         key={article.title}
-    //         />
-    //     )
-    // })
-
     const clearInputs = () => {
         setCategory('')
         setFiltered([])
