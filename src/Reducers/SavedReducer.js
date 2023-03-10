@@ -5,7 +5,7 @@ export const initialState = {
 
   const savedReducer = (state, action) => {
     const {type, payload} = action;
-    // console.log(typeof state.savedArticles)
+    console.log(typeof state.savedArticles)
 
 
     switch (type) {

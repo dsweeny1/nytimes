@@ -8,9 +8,6 @@ const SavedArticles = ({articles}) => {
 
 
     useEffect(() => {
-        // if(toRead.length < savedArticles.length) {
-        //     toRead = savedArticles
-        // }
     }, [savedArticles])
 
     const toReadCards = savedArticles.reduce((savedResults, toReadArticle) => {

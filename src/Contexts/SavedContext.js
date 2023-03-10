@@ -13,15 +13,10 @@ const useSaved = () => {
 }
 
 export const SavedProvider = ({children}) => {
-    // const [toReadArticles, setToReadArticles] = useState(() => {
-    //     const localData = localStorage.getItem('toReadArticles')
-    //     return localData ? JSON.parse(localData) : 
-    // })
-    
     const [state, dispatch] = useReducer(savedReducer, initialState)
     
     const saveArticle = (article) => {
-        const savedList = state.savedArticles.includes(article) ? null : state.savedArticles.push(article)
+        const savedList = state.savedArticles.push(article)
         
         dispatch({
             type: 'ADD_TO_SAVED',
@@ -40,7 +35,6 @@ export const SavedProvider = ({children}) => {
                 savedArticles: deleteList
             }
         })
-        // return deleteList
     }
     
     
@@ -48,13 +42,7 @@ export const SavedProvider = ({children}) => {
         saveArticle,
         deleteArticle,
         savedArticles: state.savedArticles,
-        // toReadArticles,
-        // setToReadArticles
     }
-
-    // useEffect(() => {
-    //     localStorage.setItem('toReadArticles', JSON.stringify(toReadArticles))
-    // }, [toReadArticles])
 
     return(
         <div>
