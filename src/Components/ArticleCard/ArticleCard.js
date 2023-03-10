@@ -6,18 +6,7 @@ import filledHeart from "../../Images/filled-heart.svg";
 import { useSaved } from '../../Contexts/SavedContext';
 
 export const ArticleCard = ({ multimedia, title }) => {
-    const [isSaved, setIsSaved] = useState(false)
     const {saveArticle, deleteArticle, savedArticles} = useSaved()
-
-    // useEffect(() => {
-    //     const articleSaved = savedArticles.find((currentArticle) => currentArticle === title)
-
-    //     if(articleSaved && savedArticles.includes(articleSaved)) {
-    //         setIsSaved(true)
-    //     } else if(articleSaved && !savedArticles.includes(articleSaved)){
-    //         setIsSaved(false)
-    //     }
-    // }, [title, savedArticles])
 
     return(
         <div className='article-card'>

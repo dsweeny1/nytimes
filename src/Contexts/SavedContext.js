@@ -3,36 +3,25 @@ import savedReducer, { initialState } from '../Reducers/SavedReducer'
 
 const SavedContext = createContext(initialState)
 
-const useSaved = () => {
-    const context = useContext(SavedContext)
-
-    if(context === undefined) {
-        throw new Error('useSaved must be used within SavedContext')
-    }
-    return context
-}
-
 export const SavedProvider = ({children}) => {
     const [state, dispatch] = useReducer(savedReducer, initialState)
     
     const saveArticle = (article) => {
-        const savedList = state.savedArticles.push(article)
         
         dispatch({
             type: 'ADD_TO_SAVED',
             payload: {
-                savedArticles: savedList
+                article: article
             }
         })
     }
     
     const deleteArticle = (article) => {
-        const deleteList = state.savedArticles.filter(currentArticle => currentArticle !== article)
 
         dispatch({
             type: 'DELETE_FROM_SAVED',
             payload: {
-                savedArticles: deleteList
+                article: article
             }
         })
     }
@@ -51,6 +40,15 @@ export const SavedProvider = ({children}) => {
             </SavedContext.Provider>
         </div>
     )
+}
+
+const useSaved = () => {
+    const context = useContext(SavedContext)
+
+    if(context === undefined) {
+        throw new Error('useSaved must be used within SavedContext')
+    }
+    return context
 }
 
 export {SavedContext, useSaved}
