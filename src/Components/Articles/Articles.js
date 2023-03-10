@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import './Articles.css'
 import { ArticleCard } from '../../Components/ArticleCard/ArticleCard'
 import nytSymbol from '../../Images/nytSymbol.png'
+import { Link } from 'react-router-dom'
 
 export const Articles = ({ articles }) => {
     const [category, setCategory] = useState('')
-    console.log(category)
     const [filtered, setFiltered] = useState([])
 
     const handleSubmit = (event) => {
@@ -44,6 +44,9 @@ export const Articles = ({ articles }) => {
     return(
         <div className='article-container'>
             <div>
+                <Link to={`saved-articles`}>
+                    <button>Saved Articles</button>
+                </Link>
                 <form onSubmit={(event) => handleSubmit(event)}>
                     <button className='reset-button' onClick={() => clearInputs()}>Reset</button>
                     <input
