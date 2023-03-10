@@ -1,20 +1,20 @@
 export const initialState = {
     savedArticles: []
   };
-  console.log(initialState.savedArticles)
+//   console.log('initial', initialState.savedArticles)
 
   const savedReducer = (state, action) => {
     const {type, payload} = action;
-    console.log(typeof state.savedArticles)
+    // console.log(typeof state.savedArticles)
 
 
-    switch (action.type) {
+    switch (type) {
         case 'ADD_TO_SAVED':
-        console.log('ADD_TO_SAVED', state)
+        console.log('ADD_TO_SAVED', payload)
 
         return {
             ...state.savedArticles,
-            savedArticles: payload.savedArticles
+            savedArticles: state.savedArticles
         }
         case 'DELETE_FROM_SAVED':
             console.log('DELETE_FROM_SAVED', payload)

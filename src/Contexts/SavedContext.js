@@ -1,4 +1,4 @@
-import React, {createContext, useReducer, useContext, useState} from 'react'
+import React, {createContext, useReducer, useContext} from 'react'
 import savedReducer, { initialState } from '../Reducers/SavedReducer'
 
 const SavedContext = createContext(initialState)
@@ -21,8 +21,8 @@ export const SavedProvider = ({children}) => {
     const [state, dispatch] = useReducer(savedReducer, initialState)
     
     const saveArticle = (article) => {
-        const savedList = initialState.savedArticles.includes(article) ? null : initialState.savedArticles.push(article)
-
+        const savedList = state.savedArticles.includes(article) ? null : state.savedArticles.push(article)
+        
         dispatch({
             type: 'ADD_TO_SAVED',
             payload: {
@@ -32,7 +32,7 @@ export const SavedProvider = ({children}) => {
     }
     
     const deleteArticle = (article) => {
-        const deleteList = initialState.savedArticles.filter(currentArticle => currentArticle !== article)
+        const deleteList = state.savedArticles.filter(currentArticle => currentArticle !== article)
 
         dispatch({
             type: 'DELETE_FROM_SAVED',
@@ -40,6 +40,7 @@ export const SavedProvider = ({children}) => {
                 savedArticles: deleteList
             }
         })
+        // return deleteList
     }
     
     

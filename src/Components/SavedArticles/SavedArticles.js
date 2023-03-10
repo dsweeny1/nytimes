@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ArticleCard } from '../../Components/ArticleCard/ArticleCard'
 import nytSymbol from '../../Images/nytSymbol.png'
-import { initialState } from '../../Reducers/SavedReducer'
+import { useSaved } from '../../Contexts/SavedContext';
 
 const SavedArticles = ({articles}) => {
-    const toRead = initialState.savedArticles
-    console.log('toRead', toRead)
+    const {savedArticles} = useSaved()
 
-    const toReadCards = toRead.reduce((savedResults, toReadArticle) => {
+
+    useEffect(() => {
+        // if(toRead.length < savedArticles.length) {
+        //     toRead = savedArticles
+        // }
+    }, [savedArticles])
+
+    const toReadCards = savedArticles.reduce((savedResults, toReadArticle) => {
         articles.forEach(article => {
             if(article.title === toReadArticle) {
                 savedResults.push(
