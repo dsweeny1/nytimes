@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment, useContext } from 'react';
 import './App.css';
-import { Articles } from '../Articles/Articles';
+import Articles from '../Articles/Articles';
 import { Route, Routes } from 'react-router-dom'
 import SingleArticle from '../SingleArticle/SingleArticle';
 import Footer from '../Footer/Footer';
@@ -15,7 +15,7 @@ import SavedArticles from '../SavedArticles/SavedArticles';
 const App = () => {
   const [ articles, setArticles ] = useState([])
   const [ error, setError ] = useState(false)
-  const {darkMode} = useContext(ThemeContext)
+  const { darkMode } = useContext(ThemeContext)
 
   const articlesBySection = async () => {
     const url = (`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
@@ -41,7 +41,7 @@ const App = () => {
   return (
     <SavedProvider>
     <div className={darkMode ? `App App-dark` : `App App-light`}>
-      <div className="App" >
+      <div className="App">
         <Header />
         <LightSwtich />
         <Fragment>

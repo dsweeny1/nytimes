@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import './ArticleCard.css'
 import emptyHeart from "../../Images/empty-heart.svg";
@@ -16,12 +16,12 @@ export const ArticleCard = ({ multimedia, title }) => {
         </Link>
         {!savedArticles.includes(title) && (
             <button onClick={() => saveArticle(title)}>
-            <img src={emptyHeart} alt={'save article'} />
+            <img src={emptyHeart} alt='save article' />
         </button>
         )}
         {savedArticles.includes(title) && (
             <button onClick={() => deleteArticle(title)}>
-            <img src={filledHeart} alt={'delete article'} />
+            <img src={filledHeart} alt='delete article' />
         </button>
         )}
         </div>

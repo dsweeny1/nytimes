@@ -32,6 +32,7 @@ export const Articles = ({ articles }) => {
         setCategory('')
         setFiltered([])
     }
+
     const articleCards = articles.map(article => {
         return(
             <ArticleCard 
@@ -41,6 +42,7 @@ export const Articles = ({ articles }) => {
             />
         )
     })
+    
     return(
         <div className='article-container'>
             <div>
@@ -66,3 +68,14 @@ export const Articles = ({ articles }) => {
         </div>
     )
 }
+
+export default Articles
+
+// const {articleContainer} = render(<Articles articles={articles} />)
+  // expect(container.firstChild.classList.contains('articles')).toBe(true)
+
+//   const saveArticleIcon = screen.getByAltText(/save article/i)
+//   expect(saveArticleIcon).toBeInTheDocument()
+
+//   const deleteArticleIcon = screen.getByAltText(/delete article/i)
+//   expect(deleteArticleIcon).toBeInTheDocument()

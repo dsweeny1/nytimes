@@ -28,6 +28,9 @@ const SavedArticles = ({articles}) => {
     return(
         <div className='saved-article-container'>
             {toReadCards}
+            {!savedArticles.length && (
+                <h2>No Articles Saved Right Now!</h2>
+            )}
         </div>
     )
 }
