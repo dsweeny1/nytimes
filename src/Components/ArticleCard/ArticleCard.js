@@ -11,7 +11,7 @@ export const ArticleCard = ({ multimedia, title }) => {
     return(
         <div className='article-card'>
         <Link to={`/${title}`} key={title} id={title} className='single-article-link'>
-            <img className='article-image' src={multimedia} alt='article'/>
+            <img className='article-image' src={multimedia} alt='article' aria-label={multimedia}/>
             <h2 className='article-title'>{title}</h2>
         </Link>
         {!savedArticles.includes(title) && (

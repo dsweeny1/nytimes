@@ -39,10 +39,11 @@ export const Articles = ({ articles }) => {
                 multimedia={!article.multimedia ? nytSymbol : article.multimedia[0].url}
                 title={article.title}
                 key={article.title}
+                id={article.title}
             />
         )
     })
-    
+
     return(
         <div className='article-container'>
             <div>
