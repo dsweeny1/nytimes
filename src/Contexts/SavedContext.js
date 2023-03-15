@@ -30,7 +30,7 @@ export const SavedProvider = ({children}) => {
     const value = {
         saveArticle,
         deleteArticle,
-        savedArticles: state.savedArticles,
+        savedArticles: state.savedArticles
     }
 
     return(
@@ -41,6 +41,12 @@ export const SavedProvider = ({children}) => {
         </div>
     )
 }
+
+// export const value = {
+//     saveArticle,
+//     deleteArticle,
+//     savedArticles: state.savedArticles
+// }
 
 const useSaved = () => {
     const context = useContext(SavedContext)

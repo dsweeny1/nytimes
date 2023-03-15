@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { logRoles, render, screen } from '@testing-library/react';
+import { render, screen } from '../../test-utils/testing-library-utils';
 import Articles from './Articles';
 import { MemoryRouter } from 'react-router-dom';
 import articles from '../../mocks/articleMockData'

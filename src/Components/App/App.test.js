@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from '@testing-library/react';
+import { logRoles, render, screen } from '../../test-utils/testing-library-utils';
 import App from './App';
 import { MemoryRouter } from 'react-router-dom';
 

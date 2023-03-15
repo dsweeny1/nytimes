@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export const Articles = ({ articles }) => {
     const [category, setCategory] = useState('')
-    const [filtered, setFiltered] = useState([])
+    const [saved, setsaved] = useState([])
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -14,11 +14,11 @@ export const Articles = ({ articles }) => {
     }
 
     const filterArticles = () => {
-        let filtered = articles.filter(article => article.title.toLowerCase().includes(category.toLowerCase()) || article.section.toLowerCase().includes(category.toLowerCase()))
-        setFiltered(filtered)
+        let saved = articles.filter(article => article.title.toLowerCase().includes(category.toLowerCase()) || article.section.toLowerCase().includes(category.toLowerCase()))
+        setsaved(saved)
     }
     
-    const filteredCards = filtered.map(article => {
+    const savedCards = saved.map(article => {
         return(
             <ArticleCard 
             multimedia={!article.multimedia === null ? nytSymbol : article.multimedia[0].url}
@@ -30,7 +30,7 @@ export const Articles = ({ articles }) => {
 
     const clearInputs = () => {
         setCategory('')
-        setFiltered([])
+        setsaved([])
     }
 
     const articleCards = articles.map(article => {
@@ -63,8 +63,8 @@ export const Articles = ({ articles }) => {
                 </form>
             </div>
             <div className='articles'>
-            {(filtered.length === 0) && articleCards}
-            {(filtered.length > 0) && filteredCards}
+            {(saved.length === 0) && articleCards}
+            {(saved.length > 0) && savedCards}
             </div>
         </div>
     )
