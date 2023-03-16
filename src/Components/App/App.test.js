@@ -2,6 +2,10 @@ import { logRoles, render, screen } from '@testing-library/react';
 import App from './App';
 import { MemoryRouter } from 'react-router-dom';
 
+// mock api call
+// check that it renders articles container, mocking out that call
+  // ^this will be in lessons from turing on Jest
+
 describe('App component', () => {
   beforeEach(() => {
     render(<App />, {wrapper: MemoryRouter});

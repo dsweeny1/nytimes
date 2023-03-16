@@ -4,6 +4,10 @@ import Articles from './Articles';
 import { MemoryRouter } from 'react-router-dom';
 import {articles} from '../../mocks/articleMockData'
 
+// here check that artcles has length of 2
+// move tests here to article card
+// add test id to props in ArticleCard
+
 describe('Articles component', () => {
     beforeEach(() => {
         render(<Articles articles={articles} />, {wrapper: MemoryRouter})

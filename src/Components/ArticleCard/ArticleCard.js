@@ -7,9 +7,11 @@ import { useSaved } from '../../Contexts/SavedContext';
 
 export const ArticleCard = ({ multimedia, title }) => {
     const {saveArticle, deleteArticle, savedArticles} = useSaved()
+    const isSavedArticle = savedArticles.includes(title)
 
     return(
-        <div className='article-card'>
+        <div className='article-card' data-testid='article-card'>
+            {//test id goes in above div}
         <Link to={`/${title}`} key={title} id={title} className='single-article-link'>
             <img className='article-image' src={multimedia} alt='article' aria-label={multimedia}/>
             <h2 className='article-title'>{title}</h2>
