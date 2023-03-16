@@ -11,31 +11,20 @@ import { ThemeContext } from '../../Contexts/ThemeContext';
 import LightSwtich from '../LightSwitch/LightSwitch';
 import { SavedProvider } from '../../Contexts/SavedContext';
 import SavedArticles from '../SavedArticles/SavedArticles';
+import { fetchArticlesData } from '../../apiCalls/apiCall';
 
 const App = () => {
   const [ articles, setArticles ] = useState([])
   const [ error, setError ] = useState(false)
   const { darkMode } = useContext(ThemeContext)
 
-  const articlesBySection = async () => {
-    const url = (`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
-
-    try{
-      let response = await fetch(url)
-      console.log(response)
-      let data = await response.json()
-      if(!response.ok) {
-        setError(true)
-        throw new Error(response.status)
-      }
-      setArticles(data.results)
-    } catch (error) {
-      console.log(error)
-    }
-}
-
   useEffect(() => {
-    articlesBySection()
+    fetchArticlesData('food')
+    .then(data => setArticles(data.results))
+    .catch((error) => {
+      console.log(error)
+      setError(true)
+    })
   }, [])
   
   return (

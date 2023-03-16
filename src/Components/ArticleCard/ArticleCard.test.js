@@ -46,4 +46,33 @@ describe("Article Card component", () => {
       });
     });
   });
+
+  test('that all alt texts exist', () => {
+    const {articleCardContainer} = render(<ArticleCard
+        multimedia={mockArticle.multimedia}
+        title={mockArticle.title}
+      />, {wrapper: MemoryRouter})
+
+    const imageElements = screen.getByAltText('article')
+    expect(imageElements).toBeInTheDocument()
+})
+test('that all titles exist', () => {
+    const {articleCardContainer} = render(<ArticleCard
+        multimedia={mockArticle.multimedia}
+        title={mockArticle.title}
+      />, {wrapper: MemoryRouter})
+    const titleElement1 = screen.getByText(`Federal Reserve's Path Is Murkier After Bank Blowup`)
+    expect(titleElement1).toBeInTheDocument()
+
+})
+test('that all multimedia exists', () => {
+    const {articleCardContainer} = render(<ArticleCard
+        multimedia={mockArticle.multimedia}
+        title={mockArticle.title}
+      />, {wrapper: MemoryRouter})
+
+        const mediaElement1 = screen.getByTestId("https://static01.nyt.com/images/2023/03/13/multimedia/13dc-fed-pfjh/13dc-fed-pfjh-superJumbo.jpg")
+        expect(mediaElement1).toBeInTheDocument()
+
+})
 });

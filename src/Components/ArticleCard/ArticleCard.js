@@ -13,7 +13,7 @@ export const ArticleCard = ({ multimedia, title }) => {
     return(
         <div className='article-card' data-testid='article-card'>
         <Link to={`/${title}`} key={title} id={title} className='single-article-link'>
-            <img className='article-image' src={multimedia} alt='article' aria-label={multimedia}/>
+            <img className='article-image' data-testid={multimedia[0].url} src={multimedia} alt='article' aria-label={multimedia}/>
             <h2 className='article-title'>{title}</h2>
         </Link>
         {!isSavedArticle && (
