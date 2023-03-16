@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '../../test-utils/testing-library-utils';
+import { render, screen } from '@testing-library/react';
 import Articles from './Articles';
 import { MemoryRouter } from 'react-router-dom';
-import articles from '../../mocks/articleMockData'
+import {articles} from '../../mocks/articleMockData'
 
 describe('Articles component', () => {
     beforeEach(() => {
@@ -16,7 +16,6 @@ describe('Articles component', () => {
     })
     test('that all titles exist', () => {
         const mockArticleTitles = articles.map(article => article.title)
-        console.log('mock', mockArticleTitles)
         const titleElement1 = screen.getByText(`Federal Reserve's Path Is Murkier After Bank Blowup`)
         const titleElement2 = screen.getByText(`Russia Outside Russia: For Elite, Dubai Becomes a Wartime Harbor`)
         expect(titleElement1).toBeInTheDocument()

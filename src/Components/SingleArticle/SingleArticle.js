@@ -8,7 +8,6 @@ const dayjs = require('dayjs')
 
 const SingleArticle = ({ articles }) => {
     const params = useParams()
-    console.log(params)
     const {saveArticle, deleteArticle, savedArticles} = useSaved()
 
     const findArticle = articles.find(article => article.title.includes(params.id))

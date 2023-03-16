@@ -27,3 +27,5 @@ export const ArticleCard = ({ multimedia, title }) => {
         </div>
     )
 }
+
+export default ArticleCard

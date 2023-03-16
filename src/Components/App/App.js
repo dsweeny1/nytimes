@@ -39,7 +39,7 @@ const App = () => {
   }, [])
   
   return (
-    <SavedProvider>
+      <SavedProvider>
     <div className={darkMode ? `App App-dark` : `App App-light`}>
       <div className="App">
         <Header />
