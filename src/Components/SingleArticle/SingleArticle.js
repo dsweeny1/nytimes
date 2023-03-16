@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom'
 import './SingleArticle.css'
 import emptyHeart from "../../Images/empty-heart.svg";
 import filledHeart from "../../Images/filled-heart.svg";
-import { useSaved } from '../../Contexts/SavedContext';
+import { useSaved, useSavedDispatch } from "../../Contexts/SavedContext";
 const dayjs = require('dayjs')
 
 const SingleArticle = ({ articles }) => {
     const params = useParams()
-    const {saveArticle, deleteArticle, savedArticles} = useSaved()
+    const { savedArticles } = useSaved();
+    const dispatch = useSavedDispatch();
 
     const findArticle = articles.find(article => article.title.includes(params.id))
         return(
@@ -21,16 +22,30 @@ const SingleArticle = ({ articles }) => {
                 <h4 className='article-section'>Section: {findArticle.section}</h4>
                 <a className='article-link' rel="noreferrer" href={findArticle.url} target={'_blank'}>Read more ...</a>
                 {!savedArticles.includes(findArticle.title) && (
-            <button onClick={() => saveArticle(findArticle.title)}>
-            <img src={emptyHeart} alt={'save article'} />
+        <button
+          onClick={() =>
+            dispatch({
+              type: "ADD_TO_SAVED",
+              payload: { article: findArticle.title },
+            })
+          }
+        >
+          <img src={emptyHeart} alt={"save article"} />
         </button>
-        )}
-        {savedArticles.includes(findArticle.title) && (
-            <button onClick={() => deleteArticle(findArticle.title)}>
-            <img src={filledHeart} alt={'delete article'} />
+      )}
+      {savedArticles.includes(findArticle.title) && (
+        <button
+          onClick={() =>
+            dispatch({
+              type: "DELETE_FROM_SAVED",
+              payload: { article: findArticle.title },
+            })
+          }
+        >
+          <img src={filledHeart} alt={"delete article"} />
         </button>
-        )}
-            </div>
+      )}
+    </div>
         )
 }
 
