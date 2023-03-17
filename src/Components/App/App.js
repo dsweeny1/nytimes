@@ -20,7 +20,10 @@ const App = () => {
 
   useEffect(() => {
     fetchArticlesData('food')
-    .then(data => setArticles(data.results))
+    .then(data => {
+      console.log(data.results)
+      setArticles(data.results)
+    })
     .catch((error) => {
       console.log(error)
       setError(true)

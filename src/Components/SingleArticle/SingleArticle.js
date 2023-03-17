@@ -14,37 +14,37 @@ const SingleArticle = ({ articles }) => {
     const findArticle = articles.find(article => article.title.includes(params.id))
         return(
             <div key={findArticle.title} id={findArticle.title}>
-                <img src={findArticle.multimedia[0].url} height='400px' alt='article'/>
-                <h2 className='article-title'>{findArticle.title}</h2>
-                <h3 className='article-abstract'>{findArticle.abstract}</h3>
-                <h4 className='article-byline'>{findArticle.byline}</h4>
-                <h4 className='date-published'>Published: {dayjs(findArticle.published_date).format('MMMM, D, YYYY')}</h4>
-                <h4 className='article-section'>Section: {findArticle.section}</h4>
-                <a className='article-link' rel="noreferrer" href={findArticle.url} target={'_blank'}>Read more ...</a>
+                <img data-testid='article-multimedia' src={findArticle.multimedia[0].url} height='400px' alt='article'/>
+                <h2 className='article-title' data-testid='article-title'>{findArticle.title}</h2>
+                <h3 className='article-abstract' data-testid='article-abstract'>{findArticle.abstract}</h3>
+                <h4 className='article-byline' data-testid='article-byline'>{findArticle.byline}</h4>
+                <h4 className='date-published' data-testid='date-published'>Published: {dayjs(findArticle.published_date).format('MMMM, D, YYYY')}</h4>
+                <h4 className='article-section' data-testid='article-section'>Section: {findArticle.section}</h4>
+                <a className='article-link' data-testid='article-link' rel="noreferrer" href={findArticle.url} target={'_blank'}>Read more ...</a>
                 {!savedArticles.includes(findArticle.title) && (
-        <button
-          onClick={() =>
-            dispatch({
-              type: "ADD_TO_SAVED",
-              payload: { article: findArticle.title },
-            })
-          }
-        >
-          <img src={emptyHeart} alt={"save article"} />
-        </button>
-      )}
-      {savedArticles.includes(findArticle.title) && (
-        <button
-          onClick={() =>
-            dispatch({
-              type: "DELETE_FROM_SAVED",
-              payload: { article: findArticle.title },
-            })
-          }
-        >
-          <img src={filledHeart} alt={"delete article"} />
-        </button>
-      )}
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "ADD_TO_SAVED",
+                  payload: { article: findArticle.title },
+                })
+              }
+            >
+              <img src={emptyHeart} alt={"save article"} />
+            </button>
+          )}
+          {savedArticles.includes(findArticle.title) && (
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "DELETE_FROM_SAVED",
+                  payload: { article: findArticle.title },
+                })
+              }
+            >
+              <img src={filledHeart} alt={"delete article"} />
+            </button>
+          )}
     </div>
         )
 }

@@ -11,9 +11,6 @@ const Header = () => {
                     <img className='nyt-logo' src={nytSymbol} alt='new york times symbol' />
                 </Link>
             </div>
-            {/* <Link to={`saved-articles`}>
-                    <button>Saved Articles</button>
-                </Link> */}
                 <h1 className='header-title'>New York Times Reader</h1>
         </div>
     )

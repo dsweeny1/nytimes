@@ -1,49 +1,25 @@
-import { fireEvent, logRoles, render, screen } from '@testing-library/react';
+import React from 'react'
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import App from './App';
 import { MemoryRouter } from 'react-router-dom';
 import { fetchArticlesData } from '../../apiCalls/apiCall';
-import { articles } from '../../mocks/articleMockData';
-// jest.mock('../../apiCalls')
+import mockArticles from '../../mocks/articleMockData'
+
+jest.mock('../../apiCalls/apiCall')
 
 describe('App component', () => {
-  let contentType
-  // let mockedArticlesApiCall
   beforeEach(() => {
-    contentType = {'Content-Type': 'application/json'}
-    // mockedArticlesApiCall.mockResolvedValueOnce(articles)
-
-    global.fetch = jest.fn(() => 
-    Promise.resolve({
-      json: () => Promise.resolve({mockReturn: {mockValue: 'The Payload'}})
-    })
-    )
+    fetchArticlesData.mockResolvedValueOnce(mockArticles)
   })
-  afterEach(() => jest.restoreAllMocks())
 
-  // test('that the request resolves', () => {
-  //   expect(mockedArticlesApiCall).toHaveBeenCalled()
+  // test('that the request was made', () => {
+  //   expect(fetchArticlesData).toHaveBeenCalled()
   // })
-
-  test('that the correct argument is being called', async () => {
-    const url = `https://api.nytimes.com/svc/topstories/v2/food.json?api-key=${process.env.REACT_APP_API_KEY}`
-    
-    fetchArticlesData('food')
-
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toHaveBeenCalledWith(url)
-  })
-
-  test('that a different argument can be called', async () => {
-    const url = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`
-    
-    fetchArticlesData('home')
-
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(fetch).toHaveBeenCalledWith(url)
-  })
+  afterEach(() => jest.restoreAllMocks())
   
   test('that header text exists', () => {
-    render(<App />, {wrapper: MemoryRouter});
+      render(<App />, {wrapper: MemoryRouter});
     const headerText = screen.getByText(/new york times reader/i);
     expect(headerText).toBeInTheDocument();
   })

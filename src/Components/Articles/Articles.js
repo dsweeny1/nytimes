@@ -71,12 +71,3 @@ export const Articles = ({ articles }) => {
 }
 
 export default Articles
-
-// const {articleContainer} = render(<Articles articles={articles} />)
-  // expect(container.firstChild.classList.contains('articles')).toBe(true)
-
-//   const saveArticleIcon = screen.getByAltText(/save article/i)
-//   expect(saveArticleIcon).toBeInTheDocument()
-
-//   const deleteArticleIcon = screen.getByAltText(/delete article/i)
-//   expect(deleteArticleIcon).toBeInTheDocument()

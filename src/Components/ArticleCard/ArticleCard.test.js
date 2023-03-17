@@ -6,8 +6,7 @@ import {
   SavedContext,
   SavedDispatchContext,
 } from "../../Contexts/SavedContext";
-import { mockArticle } from "../../mocks/articleMockData";
-import { articles } from "../../mocks/articleMockData";
+import { mockArticle, mockArticles } from "../../mocks/articleMockData";
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -20,7 +19,7 @@ describe("Article Card component", () => {
 
   beforeEach(() => {
     dispatch = jest.fn();
-    state = { savedArticles: articles };
+    state = { savedArticles: mockArticles };
   });
 
   test("that dispatch is working", async () => {

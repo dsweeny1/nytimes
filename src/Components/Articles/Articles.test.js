@@ -2,23 +2,23 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Articles from './Articles';
 import { MemoryRouter } from 'react-router-dom';
-import {articles} from '../../mocks/articleMockData'
+import {mockArticles} from '../../mocks/articleMockData'
 
 describe('Articles component', () => {
     test('that mocked data is being used', () => {
-        render(<Articles articles={articles} />, {wrapper: MemoryRouter})
-        expect(articles.length).toEqual(2)
+        render(<Articles articles={mockArticles} />, {wrapper: MemoryRouter})
+        expect(mockArticles.length).toEqual(2)
     })
     test('that all alt texts exist', () => {
-        render(<Articles articles={articles} />, {wrapper: MemoryRouter})
-    const mockAltTexts = articles.map(article => article.alt)
+        render(<Articles articles={mockArticles} />, {wrapper: MemoryRouter})
+    const mockAltTexts = mockArticles.map(article => article.alt)
     const imageElements = screen.getAllByAltText('article')
     expect(imageElements.length).toEqual(mockAltTexts.length)
 })
 test('that all titles exist', () => {
-    render(<Articles articles={articles} />, {wrapper: MemoryRouter})
-    const mockArticleTitles = articles.map(article => article.title)
-    articles.forEach(article => {
+    render(<Articles articles={mockArticles} />, {wrapper: MemoryRouter})
+    const mockArticleTitles = mockArticles.map(article => article.title)
+    mockArticles.forEach(article => {
         const titleElement1 = screen.getByText(`${article.title}`)
         const titleElement2 = screen.getByText(`${article.title}`)
         expect(titleElement1).toBeInTheDocument()
@@ -27,9 +27,9 @@ test('that all titles exist', () => {
     expect(mockArticleTitles).toEqual(["Federal Reserve's Path Is Murkier After Bank Blowup", "Russia Outside Russia: For Elite, Dubai Becomes a Wartime Harbor"])
 })
 test('that all multimedia exists', () => {
-    render(<Articles articles={articles} />, {wrapper: MemoryRouter})
-    const mockArticleMedia = articles.map(article => article.multimedia[0])
-    articles.forEach(article => {
+    render(<Articles articles={mockArticles} />, {wrapper: MemoryRouter})
+    const mockArticleMedia = mockArticles.map(article => article.multimedia[0])
+    mockArticles.forEach(article => {
         const mediaElement1 = screen.getByRole('img', {name: `${article.multimedia[0].url}`})
         const mediaElement2 = screen.getByRole('img', {name: `${article.multimedia[0].url}`})
         
