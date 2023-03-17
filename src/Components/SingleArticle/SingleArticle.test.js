@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom';
-import { logRoles, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import SingleArticle from './SingleArticle';
 import {mockArticles, mockArticle} from '../../mocks/articleMockData'
-import Router from 'react-router-dom'
 
 jest.mock("react-router-dom", () => ({
     ...jest.requireActual("react-router-dom"),

@@ -14,7 +14,7 @@ describe('APICall', () => {
     )
   })
   afterEach(() => jest.restoreAllMocks())
-  test('that the correct argument is being called', async () => {
+  test('that the GET request occurs when passed an argument', async () => {
       const url = `https://api.nytimes.com/svc/topstories/v2/food.json?api-key=${process.env.REACT_APP_API_KEY}`
       
       act(() => {
@@ -25,11 +25,22 @@ describe('APICall', () => {
       expect(fetch).toHaveBeenCalledWith(url)
     })
   
-    test('that a different argument can be called', async () => {
+    test('that a different GET request occurs when passed a different argument', async () => {
       const url = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`
       
       act(() => {
         fetchArticlesData('home')
+      })
+  
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith(url)
+    })
+    test('that an argument can be passed in', () => {
+        const argument = 'arts'
+        const url = `https://api.nytimes.com/svc/topstories/v2/${argument}.json?api-key=${process.env.REACT_APP_API_KEY}`
+      
+      act(() => {
+        fetchArticlesData(argument)
       })
   
       expect(fetch).toHaveBeenCalledTimes(1)
