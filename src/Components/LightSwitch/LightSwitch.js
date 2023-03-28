@@ -14,6 +14,7 @@ const LightSwtich = () => {
         <div className='LightSwitch'>
             <img 
             className='lightswitch-image'
+            data-testid='lightswitch-image'
             src={darkMode ? lightswitchOff : lightswitchOn} 
             alt='Lightswitch'
             onClick={handleClick}
