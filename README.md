@@ -28,6 +28,7 @@ Instructions for this solo challenge include creating a React application that a
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
 ![Vercel](https://user-images.githubusercontent.com/101746747/188785090-4abee495-4f46-4dba-b554-e16ded576297.png)
 
@@ -35,7 +36,7 @@ Instructions for this solo challenge include creating a React application that a
 - Danielle Sweeny - [LinkedIn](https://www.linkedin.com/in/danielle-sweeny-75b50b84/) [GitHub](https://github.com/dsweeny1)
 
 ## Deployed Page
-You can view the deployed webpage [here](https://nytimes-ten.vercel.app/)!
+You can view the deployed webpage [here](https://nytimes-roan.vercel.app/)!
 
 ## Demo
 
@@ -64,8 +65,6 @@ To run this project, you will need to add the following environment variables to
 `API_KEY` From  New York Times API Top Stories API 
 
 ## Future Additions and Improvements
-- Sort by date of article
-- Star my favorite articles
 - Graphics and styling for more impressive UI/UX Design
 
 ## Project Spec
