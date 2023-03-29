@@ -19,7 +19,7 @@ const App = () => {
   const { darkMode } = useContext(ThemeContext)
 
   useEffect(() => {
-    fetchArticlesData('home')
+    fetchArticlesData('food')
     .then(data => {
       console.log(data.results)
       setArticles(data.results)

@@ -48,7 +48,7 @@ export const Articles = ({ articles }) => {
         <div className='article-container'>
             <div>
                 <Link to={`saved-articles`}>
-                    <button>Saved Articles</button>
+                    <button className='saved-articles'>Saved Articles</button>
                 </Link>
                 <form onSubmit={(event) => handleSubmit(event)}>
                     <button className='reset-button' onClick={() => clearInputs()}>Reset</button>

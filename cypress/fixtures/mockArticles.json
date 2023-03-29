@@ -1,30 +1,198 @@
-{"mockArticles": [
-        {
-            "title": "Federal Reserve's Path Is Murkier After Bank Blowup",
-            "url": "https://www.nytimes.com/2023/03/13/business/economy/federal-reserve-interest-rates.html",
-            "abstract": "The Federal Reserve has been rapidly raising interest rates to fight inflation. But making big moves could be trickier amid instability.",
-            "byline": "By Jeanna Smialek",
-            "published_date": "2023-03-13T05:00:32-04:00",
-            "section": "world",
-            "multimedia": [
-                {"url": "https://static01.nyt.com/images/2023/03/13/multimedia/13dc-fed-pfjh/13dc-fed-pfjh-superJumbo.jpg"},
-                {"url": "https://static01.nyt.com/images/2023/03/13/multimedia/13dc-fed-pfjh/13dc-fed-pfjh-threeByTwoSmallAt2X.jpg"}
-            ],
-            "alt": "article"
-        },
-        {
-            "title": 
-            "Russia Outside Russia: For Elite, Dubai Becomes a Wartime Harbor",
-            "url":"https://www.nytimes.com/2023/03/13/world/europe/russia-dubai-ukraine-war.html",
-            "abstract": "In the exclusive neighborhoods and palatial shopping malls of the United Arab Emirates’ biggest city, wealthy Russians can build a new life without having to cut ties to their home country.",
-            "byline": "By Anton Troianovski and Andrea DiCenzo",
-            "published_date": "2023-03-13T05:00:32-04:00",
-            "section": "world",
-            "multimedia": [
-                {"url": "https://static01.nyt.com/images/2023/03/09/multimedia/00russia-dubai-promo/00russia-dubai-11-ltbq-superJumbo.jpg"},
-                {"url": "https://static01.nyt.com/images/2023/03/09/multimedia/00russia-dubai-promo/00russia-dubai-promo-thumbLarge.jpg"}
-            ],
-            "alt": "article"
-        }
-    ]
-}
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2023 The New York Times Company. All Rights Reserved.",
+    "section": "Home",
+    "last_updated": "2023-03-09T22:58:42-05:00",
+    "num_results": 39,
+    "results": [
+    {
+    "section": "dining",
+    "subsection": "",
+    "title": "Inside the ‘Top Chef’ Industrial Complex",
+    "abstract": "Entering its 20th season, the sprawling Bravo franchise has changed the way Americans eat and become a mirror of the restaurant industry.",
+    "url": "https://www.nytimes.com/2023/03/09/dining/top-chef-season-20.html",
+    "uri": "nyt://article/33e16465-e532-5f23-aa21-e58f4181418e",
+    "byline": "By Brett Anderson",
+    "item_type": "Article",
+    "updated_date": "2023-03-10T10:10:49-05:00",
+    "created_date": "2023-03-09T22:30:08-05:00",
+    "published_date": "2023-03-09T22:30:08-05:00",
+    "material_type_facet": "",
+    "kicker": "",
+    "des_facet": [
+    "Top Chef (TV Program)",
+    "Reality Television",
+    "Contests and Prizes",
+    "Chefs",
+    "Cooking and Cookbooks",
+    "Restaurants"
+    ],
+    "org_facet": [
+    "Magical Elves",
+    "Bravo",
+    "NBCUniversal"
+    ],
+    "per_facet": [
+    "Colicchio, Tom",
+    "Lakshmi, Padma"
+    ],
+    "geo_facet": [ ],
+    "multimedia": [
+    {
+    "url": "https://static01.nyt.com/images/2023/03/15/dining/15Top-Chef-Cover/15Top-Chef-Cover-superJumbo.jpg",
+    "format": "Super Jumbo",
+    "height": 2048,
+    "width": 1753,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "",
+    "copyright": "Photo Illustration by Sean McCabe. Photographs by Bravo"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/15/dining/15Top-Chef-Cover/15Top-Chef-Cover-threeByTwoSmallAt2X.jpg",
+    "format": "threeByTwoSmallAt2X",
+    "height": 400,
+    "width": 600,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "",
+    "copyright": "Photo Illustration by Sean McCabe. Photographs by Bravo"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/15/dining/15Top-Chef-Cover/15Top-Chef-Cover-thumbLarge.jpg",
+    "format": "Large Thumbnail",
+    "height": 150,
+    "width": 150,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "",
+    "copyright": "Photo Illustration by Sean McCabe. Photographs by Bravo"
+    }
+    ],
+    "short_url": "https://nyti.ms/421q4ij"
+  },
+  
+  {
+    "section": "dining",
+    "subsection": "drinks",
+    "title": "Angel’s Share Finds a New Home in Greenwich Village",
+    "abstract": "The pioneering cocktail bar will move to a building with landmark status, just down the street from Via Carota.",
+    "url": "https://www.nytimes.com/2023/03/09/dining/drinks/angels-share-reopening-greenwich-village-nyc.html",
+    "uri": "nyt://article/442b3075-0207-59f8-b815-56b593d5aae4",
+    "byline": "By Robert Simonson",
+    "item_type": "Article",
+    "updated_date": "2023-03-09T05:00:24-05:00",
+    "created_date": "2023-03-09T05:00:24-05:00",
+    "published_date": "2023-03-09T05:00:24-05:00",
+    "material_type_facet": "",
+    "kicker": "",
+    "des_facet": [
+    "Bars and Nightclubs",
+    "Cocktails and Mixed Drinks"
+    ],
+    "org_facet": [
+    "Angel's Share (Manhattan, NY, Bar)"
+    ],
+    "per_facet": [
+    "Yoshida, Tadao (Tony)"
+    ],
+    "geo_facet": [
+    "Greenwich Village (Manhattan, NY)"
+    ],
+    "multimedia": [
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00angels-share-fcjg/00angels-share-fcjg-superJumbo.jpg",
+    "format": "Super Jumbo",
+    "height": 1366,
+    "width": 2048,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The original Angel’s Share closed a year ago.",
+    "copyright": "Haruka Sakaguchi for The New York Times"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00angels-share-fcjg/00angels-share-fcjg-threeByTwoSmallAt2X.jpg",
+    "format": "threeByTwoSmallAt2X",
+    "height": 400,
+    "width": 600,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The original Angel’s Share closed a year ago.",
+    "copyright": "Haruka Sakaguchi for The New York Times"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00angels-share-fcjg/00angels-share-fcjg-thumbLarge.jpg",
+    "format": "Large Thumbnail",
+    "height": 150,
+    "width": 150,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The original Angel’s Share closed a year ago.",
+    "copyright": "Haruka Sakaguchi for The New York Times"
+    }
+    ],
+    "short_url": "https://nyti.ms/3ZqmYTv"
+  }, 
+  
+  {
+    "section": "dining",
+    "subsection": "",
+    "title": "Restaurant Review: At Okiboru, Soupless Ramen in a Stressless Setting",
+    "abstract": "A new noodle shop brings the specialty ramen known as tsukemen to the Lower East Side, along with a speedy, efficient serving system.",
+    "url": "https://www.nytimes.com/2023/03/07/dining/okiboru-restaurant-review.html",
+    "uri": "nyt://article/7f1dd24b-cb01-5d47-867b-fc1855685ba3",
+    "byline": "By Pete Wells",
+    "item_type": "Article",
+    "updated_date": "2023-03-07T23:31:44-05:00",
+    "created_date": "2023-03-07T15:20:12-05:00",
+    "published_date": "2023-03-07T15:20:12-05:00",
+    "material_type_facet": "",
+    "kicker": "",
+    "des_facet": [
+    "Noodles",
+    "Restaurants"
+    ],
+    "org_facet": [
+    "Okiboru (Manhattan, NY Restaurant)"
+    ],
+    "per_facet": [ ],
+    "geo_facet": [
+    "Lower East Side (Manhattan, NY)"
+    ],
+    "multimedia": [
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00rest-okiboru-01-fmqb/00rest-okiboru-01-fmqb-superJumbo.jpg",
+    "format": "Super Jumbo",
+    "height": 1365,
+    "width": 2048,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The first step in eating tsukemen is to raise the noodles high, then lower them into a concentrated broth.",
+    "copyright": "Lanna Apisukh for The New York Times"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00rest-okiboru-01-fmqb/00rest-okiboru-01-fmqb-threeByTwoSmallAt2X.jpg",
+    "format": "threeByTwoSmallAt2X",
+    "height": 400,
+    "width": 600,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The first step in eating tsukemen is to raise the noodles high, then lower them into a concentrated broth.",
+    "copyright": "Lanna Apisukh for The New York Times"
+    },
+    {
+    "url": "https://static01.nyt.com/images/2023/03/03/multimedia/00rest-okiboru-01-fmqb/00rest-okiboru-01-fmqb-thumbLarge.jpg",
+    "format": "Large Thumbnail",
+    "height": 150,
+    "width": 150,
+    "type": "image",
+    "subtype": "photo",
+    "caption": "The first step in eating tsukemen is to raise the noodles high, then lower them into a concentrated broth.",
+    "copyright": "Lanna Apisukh for The New York Times"
+    }
+    ],
+    "short_url": "https://nyti.ms/3kNvpJD"
+    }
+  
+  ]
+  }
