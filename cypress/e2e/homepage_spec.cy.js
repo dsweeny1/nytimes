@@ -27,11 +27,13 @@ describe('Homepage View', () => {
       it('Should be able to visit the home page and render the article cards', () => {
         cy.get('.articles > :nth-child(1)')
         cy.get(`.article-image`)
-        cy.get('.article-title').contains('Inside the ‘Top Chef’ Industrial Complex')
+        cy.get('.article-title').contains('Inside the ‘Top Chef’ Industrial Complex').should('exist')
+        cy.get('.article-title').contains('Bloop Bloop Bloop').should('not.exist')
         cy.get(':nth-child(1) > button > img')
       })
       it('Should be able to render the footer', () => {
-        cy.get('.name-tag').contains('Danielle Sweeny')
+        cy.get('.name-tag').contains('Danielle Sweeny').should('exist')
+        cy.get('.name-tag').contains('Leslie Knope').should('not.exist')
         cy.get('[alt="LinkedIn logo"]')
         cy.get('[alt="GitHub logo"]')
       })
@@ -84,6 +86,40 @@ describe('Homepage action', () => {
         cy.get('[data-testid="article-link"]').invoke("removeAttr", "target").click()
         cy.origin('https://www.nytimes.com', () => {
             cy.get('body').contains('The New York Times')
+        })
+    })
+    it('Should be able to open GitHub and LinkedIn links', () => {
+        cy.get('[alt="LinkedIn logo"]').click()
+        cy.origin('https://www.linkedin.com/in/danielle-sweeny-75b50b84/', () => {
+            cy.get('body').contains('Danielle Sweeny')
+            cy.go('back')
+        })
+        cy.get('.article-container')
+        cy.get('[alt="GitHub logo"]').click()
+        cy.origin('https://github.com/dsweeny1', () => {
+            cy.get('body').contains('Hey There')
+            cy.go('back')
+        })
+        cy.get('.article-container')
+    })
+})
+
+describe('Errors and Loading page', () => {
+    it('Should display the loading page', () => {
+        let sendResponse
+        const trigger = new Promise((resolve) => {
+            sendResponse = resolve
+        })
+        cy.intercept(`https://api.nytimes.com/svc/topstories/v2/food.json?api-key=${key}`, (request) => {
+            return trigger.then(() => {
+                request.reply()
+            })
+        })
+        cy.visit('http://localhost:3000')
+        cy.get('.loading-image').should('be.visible').then(() => {
+            sendResponse()
+            cy.get('.loading-image').should('not.exist')
+            cy.get('.article-container').should('be.visible')
         })
     })
 })
