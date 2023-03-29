@@ -1,13 +1,11 @@
 import React from 'react'
 import {fireEvent, render, screen} from '@testing-library/react'
-import LightSwtich from './LightSwitch'
 import App from '../App/App'
 import { MemoryRouter } from 'react-router-dom'
-import ThemeContext, { ThemeProvider } from '../../Contexts/ThemeContext'
+import { ThemeProvider } from '../../Contexts/ThemeContext'
 
 describe('LightSwitch component', () => {
     test('that the theme starts out with a white background', () => {
-        // render(<LightSwtich />)
         render(
             <ThemeProvider >
                 <App />
