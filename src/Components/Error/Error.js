@@ -4,10 +4,10 @@ import error from '../../Images/whoops.png';
 
 const Error = () => {
   return (
-    <section className='error'>
+    <div className='error'>
       <img src={ error } data-cy='error-image' alt="Error message" />
       <h2>Something Went Wrong! Please Go Home!</h2>
-    </section>
+    </div>
   );
 };
 

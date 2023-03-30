@@ -122,4 +122,14 @@ describe('Errors and Loading page', () => {
             cy.get('.article-container').should('be.visible')
         })
     })
+    it('Should display an error message and image if the link is wrong', () => {
+        cy.visit('http://localhost:3000/gdhag')
+        cy.get('[data-cy="error-image"]')
+        cy.get('h2').contains('Something Went Wrong! Please Go Home!')
+    })
+    it('should show an error message for a 500 error', () => {
+        cy.visit('http://localhost:3000/articl/dshshsah')
+        cy.get('[data-cy="error-image"]')
+        cy.get('h2').contains('Something Went Wrong! Please Go Home!')
+      })
 })

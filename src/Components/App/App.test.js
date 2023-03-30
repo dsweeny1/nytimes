@@ -13,9 +13,6 @@ describe('App component', () => {
     fetchArticlesData.mockResolvedValueOnce(mockArticles)
   })
 
-  // test('that the request was made', () => {
-  //   expect(fetchArticlesData).toHaveBeenCalled()
-  // })
   afterEach(() => jest.restoreAllMocks())
   
   test('that header text exists', () => {

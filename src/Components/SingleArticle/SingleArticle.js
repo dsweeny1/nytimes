@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import './SingleArticle.css'
 import emptyHeart from "../../Images/empty-heart.svg";
 import filledHeart from "../../Images/filled-heart.svg";
+import whoops from '../../Images/whoops.png'
+import Error from '../Error/Error';
 import { useSaved, useSavedDispatch } from "../../Contexts/SavedContext";
 const dayjs = require('dayjs')
 
@@ -12,10 +14,15 @@ const SingleArticle = ({ articles }) => {
     const dispatch = useSavedDispatch();
 
     const findArticle = articles.find(article => article.title.includes(params.id))
+      if(!findArticle) {
+        return(
+          <Error />
+        )
+      } else {
         return(
             <div key={findArticle.title} id={findArticle.title}>
                 <img data-testid='article-multimedia' src={findArticle.multimedia[0].url} height='400px' alt='article'/>
-                <h2 className='article-title' data-testid='article-title'>{findArticle.title}</h2>
+                {!findArticle.title ? whoops : <h2 className='article-title' data-testid='article-title'>{findArticle.title}</h2>}
                 <h3 className='article-abstract' data-testid='article-abstract'>{findArticle.abstract}</h3>
                 <h4 className='article-byline' data-testid='article-byline'>{findArticle.byline}</h4>
                 <h4 className='date-published' data-testid='date-published'>Published: {dayjs(findArticle.published_date).format('MMMM, D, YYYY')}</h4>
@@ -47,6 +54,7 @@ const SingleArticle = ({ articles }) => {
           )}
     </div>
         )
+      }
 }
 
 export default SingleArticle
