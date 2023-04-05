@@ -6,13 +6,13 @@ import filledHeart from "../../Images/filled-heart.svg";
 import nytSymbol from '../../Images/nytSymbol.png'
 import { useSaved, useSavedDispatch } from "../../Contexts/SavedContext";
 
-export const ArticleCard = ({ multimedia, title }) => {
+export const ArticleCard = ({ multimedia, title, section }) => {
     const { savedArticles } = useSaved();
     const dispatch = useSavedDispatch();
     const isSavedArticle = savedArticles.includes(title)
 
     return(
-        <div className='article-card' data-testid='article-card'>
+        <div className='article-card' data-testid={`article-card-${section}`}>
         <Link to={`/${title}`} key={title} id={title} className='single-article-link'>
             <img className='article-image' data-testid={multimedia[0].url} src={multimedia ? multimedia : nytSymbol} alt='article' aria-label={multimedia}/>
             <h2 className='article-title'>{title}</h2>

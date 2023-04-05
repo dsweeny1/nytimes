@@ -25,7 +25,29 @@ const mockArticles = [
             {url: "https://static01.nyt.com/images/2023/03/09/multimedia/00russia-dubai-promo/00russia-dubai-promo-thumbLarge.jpg"}
         ],
         alt: 'article'
-    }]
+    },
+    {
+        abstract: "The ex-president’s indictment put him in the rare position of being forced onto a public stage not of his own choosing.",
+        byline: "By James Poniewozik",
+        published_date: "2023-04-05T07:33:16-04:00",
+        section: "arts",
+        title: "For Once, Donald Trump Did Not Enjoy the Show",
+        multimedia: [{url: "https://static01.nyt.com/images/2023/04/05/multimedia/05trumptv-notebook-wvfl/05trumptv-notebook-wvfl-superJumbo.jpg"
+        }],
+        alt: 'article'
+    }
+]
+
+const filteredArts = [{
+    abstract: "The ex-president’s indictment put him in the rare position of being forced onto a public stage not of his own choosing.",
+    byline: "By James Poniewozik",
+    published_date: "2023-04-05T07:33:16-04:00",
+    section: "arts",
+    title: "For Once, Donald Trump Did Not Enjoy the Show",
+    multimedia: [{url: "https://static01.nyt.com/images/2023/04/05/multimedia/05trumptv-notebook-wvfl/05trumptv-notebook-wvfl-superJumbo.jpg"
+    }],
+    alt: 'article'
+}]
 
     const mockArticle = {
         title: "Federal Reserve's Path Is Murkier After Bank Blowup",
@@ -84,4 +106,4 @@ const mockArticles = [
             alt: 'article'
         }
 
-    export {mockArticles, mockArticle, savedmockArticles, mockSingleArticle}
+    export {mockArticles, mockArticle, savedmockArticles, mockSingleArticle, filteredArts}
