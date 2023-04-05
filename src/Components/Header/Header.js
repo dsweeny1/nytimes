@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import nytSymbol from '../../Images/nytSymbol.png'
 
 const Header = () => {
+
     return(
         <div className='header-container'>
             <div className='logo-container'>

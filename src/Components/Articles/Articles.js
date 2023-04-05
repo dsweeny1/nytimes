@@ -3,49 +3,62 @@ import './Articles.css'
 import { ArticleCard } from '../../Components/ArticleCard/ArticleCard'
 import nytSymbol from '../../Images/nytSymbol.png'
 import { Link } from 'react-router-dom'
+import Sections from '../../sectionData'
+import { fetchArticlesData } from '../../apiCalls/apiCall';
 
-export const Articles = ({ articles }) => {
+export const Articles = ({ articles, setArticles }) => {
     const [category, setCategory] = useState('')
-    const [saved, setsaved] = useState([])
+    const [filtered, setFiltered] = useState([])
 
     const handleSubmit = (event) => {
         event.preventDefault()
         filterArticles()
     }
 
+    const handleSection = (event) => {
+        event.preventDefault()
+        fetchArticlesData(event.target.value)
+            .then(data => {
+                setFiltered(data.results)
+            })
+    }
+
     const filterArticles = () => {
-        let saved = articles.filter(article => article.title.toLowerCase().includes(category.toLowerCase()) || article.section.toLowerCase().includes(category.toLowerCase()))
-        setsaved(saved)
+        let filtered = articles.filter(article => article.title.toLowerCase().includes(category.toLowerCase()) || article.section.toLowerCase().includes(category.toLowerCase()))
+        setFiltered(filtered)
     }
     
-    const savedCards = saved.map(article => {
+    const filteredCards = filtered.map((article, i) => {
         return(
             <ArticleCard 
-            multimedia={!article.multimedia === null ? nytSymbol : article.multimedia[0].url}
-            title={article.title}
-            key={article.title}
+            multimedia={article.multimedia === null ? nytSymbol : article.multimedia[0].url}
+            title={article.title === '' ? 'Title Unavailable' : article.title}
+            key={i}
             />
         )
     })
 
     const clearInputs = () => {
         setCategory('')
-        setsaved([])
+        setFiltered([])
     }
 
-    const articleCards = articles.map(article => {
+    const articleCards = articles.map((article, i) => {
         return(
             <ArticleCard 
                 multimedia={!article.multimedia ? nytSymbol : article.multimedia[0].url}
                 title={article.title}
-                key={article.title}
-                id={article.title}
+                key={i}
+                id={i}
             />
         )
     })
 
     return(
         <div className='article-container'>
+            <div className='section-button-container'>
+                    {Sections.map(section => <button onClick={(event) => handleSection(event)} key={section} value={section}>{section}</button>)}
+                </div>
             <div>
                 <Link to={`saved-articles`}>
                     <button className='saved-articles'>Saved Articles</button>
@@ -63,8 +76,8 @@ export const Articles = ({ articles }) => {
                 </form>
             </div>
             <div className='articles'>
-            {(saved.length === 0) && articleCards}
-            {(saved.length > 0) && savedCards}
+            {(filtered.length === 0) && articleCards}
+            {(filtered.length > 0) && filteredCards}
             </div>
         </div>
     )

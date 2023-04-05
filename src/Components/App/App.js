@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment, useContext } from 'react';
 import './App.css';
 import Articles from '../Articles/Articles';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useParams } from 'react-router-dom'
 import SingleArticle from '../SingleArticle/SingleArticle';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header'
@@ -19,7 +19,7 @@ const App = () => {
   const { darkMode } = useContext(ThemeContext)
 
   useEffect(() => {
-    fetchArticlesData('food')
+    fetchArticlesData('home')
     .then(data => {
       console.log(data.results)
       setArticles(data.results)

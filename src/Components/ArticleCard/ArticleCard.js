@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import './ArticleCard.css'
 import emptyHeart from "../../Images/empty-heart.svg";
 import filledHeart from "../../Images/filled-heart.svg";
+import nytSymbol from '../../Images/nytSymbol.png'
 import { useSaved, useSavedDispatch } from "../../Contexts/SavedContext";
 
 export const ArticleCard = ({ multimedia, title }) => {
@@ -13,7 +14,7 @@ export const ArticleCard = ({ multimedia, title }) => {
     return(
         <div className='article-card' data-testid='article-card'>
         <Link to={`/${title}`} key={title} id={title} className='single-article-link'>
-            <img className='article-image' data-testid={multimedia[0].url} src={multimedia} alt='article' aria-label={multimedia}/>
+            <img className='article-image' data-testid={multimedia[0].url} src={multimedia ? multimedia : nytSymbol} alt='article' aria-label={multimedia}/>
             <h2 className='article-title'>{title}</h2>
         </Link>
         {!isSavedArticle && (
