@@ -10,7 +10,6 @@ const dayjs = require('dayjs')
 
 const SingleArticle = ({ articles }) => {
     const params = useParams()
-    console.log(params)
     const { savedArticles } = useSaved();
     const dispatch = useSavedDispatch();
 

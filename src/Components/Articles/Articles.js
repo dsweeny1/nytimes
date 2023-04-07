@@ -1,51 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './Articles.css'
 import { ArticleCard } from '../../Components/ArticleCard/ArticleCard'
 import nytSymbol from '../../Images/nytSymbol.png'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Sections from '../../sectionData'
-import { fetchArticlesData } from '../../apiCalls/apiCall';
 
-export const Articles = ({ articles, setArticles }) => {
+export const Articles = ({ articles, setArticles, setCurrentSection }) => {
     console.log('articles', articles)
     const [category, setCategory] = useState('')
     const [filtered, setFiltered] = useState([])
-    // const params = useParams()
-    // console.log(params.id)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         filterArticles()
     }
-
-    const handleSection = (event) => {
-        event.preventDefault()
-        fetchArticlesData(event.target.value)
-            .then(data => {
-                console.log(data.results)
-                setArticles(data.results)
-            })
-    }
-
-    // const findSection = articles.find(article => article.section === params.section)
-    // console.log('find', findSection)
-
-    // useEffect(() => {
-    //     const currentSelection = section ? section : 'home'
-    //     if(section) {
-    //         setArticles(null)
-    //     }
-
-    //     fetchArticlesData(currentSelection)
-    //     .then(data => {
-    //       console.log(data.results)
-    //       setArticles(data.results)
-    //     })
-    //     .catch((error) => {
-    //       console.log(error)
-    //       setError(true)
-    //     })
-    //   }, [section])
 
     const filterArticles = () => {
         let filtered = articles.filter(article => article.title.toLowerCase().includes(category.toLowerCase()) || article.section.toLowerCase().includes(category.toLowerCase()))
@@ -59,6 +27,7 @@ export const Articles = ({ articles, setArticles }) => {
             title={article.title === '' ? 'Title Unavailable' : article.title}
             section={article.section}
             key={i}
+            id={article.title}
             />
         )
     })
@@ -82,11 +51,9 @@ export const Articles = ({ articles, setArticles }) => {
 
     return(
         <div className='article-container'>
-            {/* <Link to={`${section}`} key={`${section}`}> */}
             <div className='section-button-container'>
-                    {Sections.map(section => <button onClick={(event) => handleSection(event)} data-testid={section} key={section} value={section}>{section}</button>)}
+                    {Sections.map((section, i) => <Link to={`/section/${section}`} key={{i}} id={i}><button onClick={(event) => setCurrentSection(event.target.value)} data-testid={i} key={i} value={section}>{section}</button></Link>)}
                 </div>
-                {/* </Link> */}
             <div>
                 <Link to={`saved-articles`}>
                     <button className='saved-articles'>Saved Articles</button>
