@@ -19,6 +19,9 @@ const SingleArticle = ({ articles }) => {
           <Error />
         )
       } else {
+
+        const capitalizedSection = findArticle.section.charAt(0).toUpperCase() + findArticle.section.slice(1);
+
         return(
             <div key={findArticle.title} id={findArticle.title} className='single-article'>
                 <img data-testid='article-multimedia' src={findArticle.multimedia[0].url} height='400px' alt='article'/>
@@ -26,7 +29,7 @@ const SingleArticle = ({ articles }) => {
                 <h3 className='article-abstract' data-testid='article-abstract'>{findArticle.abstract}</h3>
                 <h4 className='article-byline' data-testid='article-byline'>{findArticle.byline}</h4>
                 <h4 className='date-published' data-testid='date-published'>Published: {dayjs(findArticle.published_date).format('MMMM, D, YYYY')}</h4>
-                <h4 className='article-section' data-testid='article-section'>Section: {findArticle.section}</h4>
+                <h4 className='article-section' data-testid='article-section'>Section: {capitalizedSection}</h4>
                 <a className='article-link' data-testid='article-link' rel="noreferrer" href={findArticle.url} target={'_blank'}>Read more ...</a>
                 {!savedArticles.includes(findArticle.title) && (
             <button
