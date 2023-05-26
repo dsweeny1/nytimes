@@ -1,20 +1,20 @@
 const Sections = [
-    "arts", 
-    "business", 
-    "fashion", 
-    "food", 
-    "health", 
-    "home", 
-    "movies",  
-    "opinion", 
-    "politics",
-    "sports", 
-    "sundayreview", 
-    "technology", 
-    "theater", 
-    "science", 
-    "us", 
-    "world"
+    "Arts", 
+    "Business", 
+    "Fashion", 
+    "Food", 
+    "Health", 
+    "Home", 
+    "Movies",  
+    "Opinion", 
+    "Politics",
+    "Sports", 
+    "Sunday Review", 
+    "Technology", 
+    "Theater", 
+    "Science", 
+    "US", 
+    "World"
 ];
 
 export default Sections;

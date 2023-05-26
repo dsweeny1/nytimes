@@ -5,8 +5,7 @@ import nytSymbol from '../../Images/nytSymbol.png'
 import { Link } from 'react-router-dom'
 import Sections from '../../sectionData'
 
-export const Articles = ({ articles, setArticles, setCurrentSection }) => {
-    console.log('articles', articles)
+export const Articles = ({ articles, setCurrentSection }) => {
     const [category, setCategory] = useState('')
     const [filtered, setFiltered] = useState([])
 
@@ -44,7 +43,7 @@ export const Articles = ({ articles, setArticles, setCurrentSection }) => {
                 title={article.title}
                 section={article.section}
                 key={i}
-                id={article.title}
+                id={i}
             />
         )
     })
@@ -52,7 +51,9 @@ export const Articles = ({ articles, setArticles, setCurrentSection }) => {
     return(
         <div className='article-container'>
             <div className='section-button-container'>
-                    {Sections.map((section, i) => <Link to={`/section/${section}`} key={{i}} id={i}><button onClick={(event) => setCurrentSection(event.target.value)} data-testid={i} key={i} value={section}>{section}</button></Link>)}
+                    {Sections
+                    .sort((a, b) => a - b)
+                    .map((section, i) => <Link to={`/section/${section}`} key={section}><button className='section-button' onClick={(event) => setCurrentSection(event.target.value)} data-testid={i} key={i} id={i} value={section}>{section}</button></Link>)}
                 </div>
             <div>
                 <Link to={`saved-articles`}>
@@ -62,6 +63,7 @@ export const Articles = ({ articles, setArticles, setCurrentSection }) => {
                     <button className='reset-button' onClick={() => clearInputs()}>Reset</button>
                     <input
                             type='text'
+                            className='text-input'
                             name='category'
                             placeholder='Search'
                             value={category}

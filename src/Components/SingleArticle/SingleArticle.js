@@ -20,7 +20,7 @@ const SingleArticle = ({ articles }) => {
         )
       } else {
         return(
-            <div key={findArticle.title} id={findArticle.title}>
+            <div key={findArticle.title} id={findArticle.title} className='single-article'>
                 <img data-testid='article-multimedia' src={findArticle.multimedia[0].url} height='400px' alt='article'/>
                 {!findArticle.title ? whoops : <h2 className='article-title' data-testid='article-title'>{findArticle.title}</h2>}
                 <h3 className='article-abstract' data-testid='article-abstract'>{findArticle.abstract}</h3>

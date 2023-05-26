@@ -20,7 +20,9 @@ const App = () => {
   const { darkMode } = useContext(ThemeContext)
 
   useEffect(() => {
-    const currentSelection = currentSection ? currentSection : 'home'
+    const getSection = currentSection.replace(/ /g, '').toLocaleLowerCase()
+    const currentSelection = getSection ? getSection : 'home'
+    console.log(currentSelection)
 
     fetchArticlesData(currentSelection)
     .then(data => {
@@ -43,11 +45,11 @@ const App = () => {
           <Routes>
             <Route 
             path='/'
-            element={!error ? <Articles setCurrentSection={setCurrentSection} setArticles={setArticles} articles={articles} /> : <Error />}
+            element={!error ? <Articles setCurrentSection={setCurrentSection} articles={articles} /> : <Error />}
             />
             <Route 
             path='section/:section'
-            element={!error ? <Articles setCurrentSection={setCurrentSection} setArticles={setArticles} articles={articles} /> : <Error />}
+            element={!error ? <Articles setCurrentSection={setCurrentSection} articles={articles} /> : <Error />}
             />
             <Route 
             path=':id'

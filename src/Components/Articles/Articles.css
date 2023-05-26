@@ -14,3 +14,54 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.section-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+  }
+
+  .saved-articles {
+    margin-bottom: 5%;
+    margin-left: 30%;
+  }
+  
+  .section-button, .saved-articles, .reset-button, .search-button {
+    background-color: black;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .section-button:focus {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+  }
+  
+  .section-button:hover, .reset-button:hover, .saved-articles:hover, .search-button:hover {
+    background-color: #797979;
+  }
+
+  .text-input {
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  .text-input:hover {
+    background-color: #e2e2e2;
+  }
