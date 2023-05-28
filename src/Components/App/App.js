@@ -39,7 +39,7 @@ const App = () => {
       <SavedProvider>
     <div className={darkMode ? `App App-dark` : `App App-light`} data-testid={darkMode ? `App App-dark` : `App App-light`}>
       <div className="App">
-        <Header />
+        <Header setCurrentSection={setCurrentSection} articles={articles} setArticles={setArticles} />
         <LightSwtich />
         <Fragment>
           <Routes>

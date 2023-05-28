@@ -14,6 +14,7 @@ const SingleArticle = ({ articles }) => {
     const dispatch = useSavedDispatch();
 
     const findArticle = articles.find(article => article.title.includes(params.id))
+    console.log(findArticle)
       if(!findArticle) {
         return(
           <Error />

@@ -33,6 +33,7 @@ export const Articles = ({ articles, setCurrentSection }) => {
 
     const clearInputs = () => {
         setCategory('')
+        setCurrentSection('home')
         setFiltered([])
     }
 
