@@ -9,9 +9,9 @@
     height: 15vh;
     width: 100vw;
     position: inherit;
-}
-
-.header-title {
+  }
+  
+  .header-title {
     margin-left: 72vw;
     font-family: 'ChomskyRegular', serif;
     color: white;
@@ -20,23 +20,23 @@
     height: 6.4vh;
     width: 27vw;
     position: absolute;
-}
-
-.logo-container {
+  }
+  
+  .logo-container {
     align-items: flex-start;
     flex-direction: column;
     position: absolute;
-}
-
-.nyt-logo {
+  }
+  
+  .nyt-logo {
     height: 11vh;
     margin: -2.35%;
     margin-top: -2.2%;
     margin-left: 2em;
     position: inherit;
-}
-
-.button-logo {
+  }
+  
+  .button-logo {
     background-color: transparent;
     border: none;
     padding: 0;
@@ -46,4 +46,40 @@
     margin-top: -2.2%;
     margin-left: 2em;
     position: inherit;
+  }
+  
+  /* Media Queries for Smartphones */
+  @media (max-width: 767px) {
+    .header-container {
+      flex-direction: column;
+      height: auto;
+      justify-content: center;
+      padding: 10px;
+    }
+  
+    .header-title {
+      margin-left: 0;
+      margin-top: 10px;
+      font-size: 3.5vw;
+      text-align: center;
+      position: static;
+      width: 100%;
+    }
+  
+    .logo-container {
+      align-items: center;
+      position: static;
+    }
+  
+    .nyt-logo {
+      height: 8vh;
+      margin-top: 0;
+      margin-left: 0;
+    }
+  
+    .button-logo {
+      height: 8vh;
+      margin-top: 0;
+      margin-left: 0;
+    }
   }

@@ -11,5 +11,12 @@
 }
 
 .App-light {
-  background-color: white
+  background-color: white;
+}
+
+/* Media Queries for Smartphones */
+@media (max-width: 767px) {
+  .App {
+    padding: 10px;
+  }
 }

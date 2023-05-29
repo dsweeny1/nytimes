@@ -1,67 +1,89 @@
 .article-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section-button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2%;
+}
+
+.saved-articles {
+  margin-bottom: 5%;
+  margin-left: 30%;
+}
+
+.section-button,
+.saved-articles,
+.reset-button,
+.search-button {
+  background-color: black;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-button:focus {
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+}
+
+.section-button:hover,
+.reset-button:hover,
+.saved-articles:hover,
+.search-button:hover {
+  background-color: #797979;
+}
+
+.text-input {
+  background-color: white;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-style: solid;
+  border-color: black;
+}
+
+.text-input:hover {
+  background-color: #e2e2e2;
+}
+
+/* Media Queries for Smartphones */
+@media (max-width: 767px) {
+  .article-container {
+    padding: 10px;
+  }
+
+  .section-button-container {
+    margin-top: 5%;
   }
 
   .saved-articles {
-    margin-bottom: 5%;
-    margin-left: 30%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .section-button, .saved-articles, .reset-button, .search-button {
-    background-color: black;
-    padding: 8px 16px;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .section-button:focus {
-    background-color: white;
-    color: black;
-    font-weight: bolder;
-  }
-  
-  .section-button:hover, .reset-button:hover, .saved-articles:hover, .search-button:hover {
-    background-color: #797979;
-  }
-
-  .text-input {
-    background-color: white;
-    color: black;
-    padding: 8px 16px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    border-style: solid;
-    border-color: black;
-  }
-  
-  .text-input:hover {
-    background-color: #e2e2e2;
-  }
+}
