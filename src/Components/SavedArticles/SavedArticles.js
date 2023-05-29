@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { ArticleCard } from '../../Components/ArticleCard/ArticleCard'
+import './SavedArticles.css'
 import nytSymbol from '../../Images/nytSymbol.png'
 import { useSaved } from '../../Contexts/SavedContext';
 
@@ -27,7 +28,9 @@ const SavedArticles = ({articles}) => {
 
     return(
         <div className='saved-article-container'>
-            {toReadCards}
+            <div className='saved-article-cards'>
+                {toReadCards}
+            </div>
             {!savedArticles.length && (
                 <h2>No Articles Saved Right Now!</h2>
             )}
