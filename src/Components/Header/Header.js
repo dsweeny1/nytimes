@@ -14,7 +14,7 @@ const Header = ({articles, setArticles, setCurrentSection}) => {
         <div className='header-container'>
             <div className='logo-container'>
                 <Link to='/'>
-                    <button onClick={() => goHome()}>
+                    <button className='button-logo' onClick={() => goHome()}>
                         <img className='nyt-logo' src={nytSymbol} alt='new york times symbol' />
                     </button>
                 </Link>

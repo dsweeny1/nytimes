@@ -35,3 +35,15 @@
     margin-left: 2em;
     position: inherit;
 }
+
+.button-logo {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    height: 11vh;
+    margin: -2.35%;
+    margin-top: -2.2%;
+    margin-left: 2em;
+    position: inherit;
+  }
